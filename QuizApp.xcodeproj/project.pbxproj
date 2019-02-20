@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3625839F221487190003137F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3625839E221487190003137F /* Extensions.swift */; };
+		364B5155221D53DE00D94744 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364B5154221D53DE00D94744 /* Question.swift */; };
+		364B5157221D5F8200D94744 /* QuestionsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364B5156221D5F8200D94744 /* QuestionsFactory.swift */; };
 		368888A9221327A700AD4D49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368888A8221327A700AD4D49 /* AppDelegate.swift */; };
 		368888AB221327A700AD4D49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368888AA221327A700AD4D49 /* ViewController.swift */; };
 		368888AE221327A700AD4D49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 368888AC221327A700AD4D49 /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 
 /* Begin PBXFileReference section */
 		3625839E221487190003137F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		364B5154221D53DE00D94744 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		364B5156221D5F8200D94744 /* QuestionsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsFactory.swift; sourceTree = "<group>"; };
 		368888A5221327A700AD4D49 /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		368888A8221327A700AD4D49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		368888AA221327A700AD4D49 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +44,8 @@
 		3625839A22147C2F0003137F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				364B5154221D53DE00D94744 /* Question.swift */,
+				364B5156221D5F8200D94744 /* QuestionsFactory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,6 +177,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3625839F221487190003137F /* Extensions.swift in Sources */,
+				364B5157221D5F8200D94744 /* QuestionsFactory.swift in Sources */,
+				364B5155221D53DE00D94744 /* Question.swift in Sources */,
 				368888AB221327A700AD4D49 /* ViewController.swift in Sources */,
 				368888A9221327A700AD4D49 /* AppDelegate.swift in Sources */,
 			);
