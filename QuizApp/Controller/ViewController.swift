@@ -9,12 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var labelQuestion: UILabel!
+    @IBOutlet weak var labelQuestionNumber: UILabel!
+    @IBOutlet weak var labelScore: UILabel!
+    @IBOutlet weak var progressBar: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBAction func buttonPressed(_ sender: UIButton) {
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
+    }
+    
 }
 
