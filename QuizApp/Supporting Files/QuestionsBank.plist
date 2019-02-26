@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Questions</key>
+	<array>
+		<dict>
+			<key>question</key>
+			<string>El vaticano tiene la cantidad de dinero suficiente para acabar con el hambre en el mundo</string>
+			<key>answer</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>question</key>
+			<string>El caballito de mar es tan fiel a su pareja, que cuando uno muere, el otro tambien</string>
+			<key>answer</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>question</key>
+			<string>Los humanos son los unicos seres vivos que practican el sexo por placer</string>
+			<key>answer</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>question</key>
+			<string>La semilla de la manzana contiene cianuro y es toxica</string>
+			<key>answer</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>question</key>
+			<string>Se puede afeitar el bigote a un gato sin problemas</string>
+			<key>answer</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>question</key>
+			<string>Un koala necesita beber al menos una vez al dia</string>
+			<key>answer</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>question</key>
+			<string>Edison, tenia miedo de la oscuridad</string>
+			<key>answer</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>question</key>
+			<string>Los escorpiones son los unicos animales que se suicidad cuando no pueden escapar de una situacion de peligro</string>
+			<key>answer</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>question</key>
+			<string>Los ojos de un hamster se pueden caer si se le cuelga cabeza abajo</string>
+			<key>answer</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>question</key>
+			<string>Si divides el numero de abejas hembra entre el de abejas machode un panel, se obtiene el numero de oro</string>
+			<key>answer</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>question</key>
+			<string>Las palmeras nacieron por primera vez en el polo norte</string>
+			<key>answer</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>question</key>
+			<string>Cervantes y Shakespeare murieron el mismo día</string>
+			<key>answer</key>
+			<true/>
+		</dict>
+	</array>
+</dict>
+</plist>

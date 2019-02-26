@@ -10,6 +10,7 @@
 		3625839F221487190003137F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3625839E221487190003137F /* Extensions.swift */; };
 		364B5155221D53DE00D94744 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364B5154221D53DE00D94744 /* Question.swift */; };
 		364B5157221D5F8200D94744 /* QuestionsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364B5156221D5F8200D94744 /* QuestionsFactory.swift */; };
+		364D3D13222595BB003F1FCB /* QuestionsBank.plist in Resources */ = {isa = PBXBuildFile; fileRef = 364D3D12222595BB003F1FCB /* QuestionsBank.plist */; };
 		368888A9221327A700AD4D49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368888A8221327A700AD4D49 /* AppDelegate.swift */; };
 		368888AB221327A700AD4D49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368888AA221327A700AD4D49 /* ViewController.swift */; };
 		368888AE221327A700AD4D49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 368888AC221327A700AD4D49 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		3625839E221487190003137F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		364B5154221D53DE00D94744 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		364B5156221D5F8200D94744 /* QuestionsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsFactory.swift; sourceTree = "<group>"; };
+		364D3D12222595BB003F1FCB /* QuestionsBank.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = QuestionsBank.plist; sourceTree = "<group>"; };
 		368888A5221327A700AD4D49 /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		368888A8221327A700AD4D49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		368888AA221327A700AD4D49 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			children = (
 				368888B1221327A900AD4D49 /* LaunchScreen.storyboard */,
 				368888B4221327A900AD4D49 /* Info.plist */,
+				364D3D12222595BB003F1FCB /* QuestionsBank.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				364D3D13222595BB003F1FCB /* QuestionsBank.plist in Resources */,
 				368888B3221327A900AD4D49 /* LaunchScreen.storyboard in Resources */,
 				368888B0221327A900AD4D49 /* Assets.xcassets in Resources */,
 				368888AE221327A700AD4D49 /* Main.storyboard in Resources */,

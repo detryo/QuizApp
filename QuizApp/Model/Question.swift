@@ -8,10 +8,19 @@
 
 import Foundation
 
-class Question {
+class Question : CustomStringConvertible{
     
     let questionText : String
     let answer : Bool
+    
+    var description : String {
+        return """
+        
+        Question: - \(questionText)
+        Answer:   - \(answer)
+        
+        """
+    }
     
     init(text: String, correctAnswer: Bool) {
         
