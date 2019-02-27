@@ -18,11 +18,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let factory = QuestionsFactory()
-        let question = factory.getRandomQuestion()
+        
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
+        
+        let factory = QuestionsFactory()
+        let question = factory.getRandomQuestion()
+        labelQuestion.text = "\(question)"
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

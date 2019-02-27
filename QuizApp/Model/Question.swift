@@ -8,15 +8,20 @@
 
 import Foundation
 
-class Question : CustomStringConvertible{
+class Question : CustomStringConvertible, Codable{
     
-    let questionText : String
+    let question : String
     let answer : Bool
+    /*
+    enum CodingKeys : String, CodingKey {
+        case questionText = "question"
+        case answer = "answer"
+    }*/
     
     var description : String {
         return """
         
-        Question: - \(questionText)
+        Question: - \(question)
         Answer:   - \(answer)
         
         """
@@ -24,7 +29,11 @@ class Question : CustomStringConvertible{
     
     init(text: String, correctAnswer: Bool) {
         
-        self.questionText = text
+        self.question = text
         self.answer = correctAnswer
     }
+}
+
+struct QuestionsBank : Codable {
+    var Questions : [Question]
 }

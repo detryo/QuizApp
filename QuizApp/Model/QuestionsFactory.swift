@@ -10,9 +10,10 @@ import Foundation
 
 class QuestionsFactory {
     
-    var questions = [Question]()
+    var questionsBank : QuestionsBank!
     
     init(){
+        /*
         if let path = Bundle.main.path(forResource: "QuestionsBank", ofType: "plist") {
             if let pList = NSDictionary(contentsOfFile: path) {
                 let questionData = pList["Questions"] as! [AnyObject]
@@ -23,21 +24,33 @@ class QuestionsFactory {
                     }
                 }
             }
+        }*/
+        
+        // Procesado Automatico Codable
+        do{
+            
+            if let url = Bundle.main.url(forResource: "QuestionsBank", withExtension: "plist"){
+                let data = try Data(contentsOf: url)
+                self.questionsBank = try PropertyListDecoder().decode(QuestionsBank.self, from: data)
+            }
+            
+        }catch{
+            print(error)
         }
     }
     
     func getQuestionAdd(index: Int) -> Question? {
         
-        if index < 0 || index >= questions.count {
+        if index < 0 || index >= self.questionsBank.Questions.count {
             return nil
         } else {
-            return questions[index]
+            return self.questionsBank.Questions[index]
         }
     }
     
     func getRandomQuestion() -> Question {
         
-        let index = Int (arc4random_uniform(UInt32 (questions.count)))
-        return questions[index]
+        let index = Int (arc4random_uniform(UInt32 (self.questionsBank.Questions.count)))
+        return self.questionsBank.Questions[index]
     }
 }
