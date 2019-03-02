@@ -15,10 +15,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var labelScore: UILabel!
     @IBOutlet weak var progressBar: UIView!
     
-    var correntScore = 0
-    var correntQuestionId = 0
-    var correctQuestionAnswered = 0
-    var correntQuestion :  Question!
+    var currentScore = 0
+    var currentQuestionId = 0
+    var currectQuestionAnswered = 0
+    var currentQuestion :  Question!
     let factory = QuestionsFactory()
     
     override func viewDidLoad() {
@@ -30,23 +30,22 @@ class ViewController: UIViewController {
     
     func startGame(){
         
-        correntScore = 0
-        correntQuestionId = 0
-        correctQuestionAnswered = 0
+        currentScore = 0
+        currentQuestionId = 0
+        currectQuestionAnswered = 0
         
-        // el metodo shuffle reordena las preguntas
-        // para que cada partida sea diferente
         self.factory.questionsBank.Questions.shuffle()
         
         askNextQuestion()
+        updateUIElements()
     }
     
     func askNextQuestion(){
         
-        if let newQuestion = factory.getQuestionAt(index: correntQuestionId){
-            self.correntQuestion = newQuestion
-            self.labelQuestion.text = self.correntQuestion.question
-            self.correntQuestionId += 1
+        if let newQuestion = factory.getQuestionAt(index: currentQuestionId){
+            self.currentQuestion = newQuestion
+            self.labelQuestion.text = self.currentQuestion.question
+            self.currentQuestionId += 1
         }else{
             // Aqui la new Question es nula ya que hemos hecho todas las preguntas
             gameOver()
@@ -55,6 +54,21 @@ class ViewController: UIViewController {
     
     func gameOver() {
         
+        let alert = UIAlertController(title: "Game Over", message: "You´re right \(self.currectQuestionAnswered) / \(self.currentQuestionId) Try again ", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (_) in
+            
+            self.startGame()
+        }
+        
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func updateUIElements() {
+        
+        self.labelScore.text = "Score: \(self.currentScore)"
+        self.labelQuestionNumber.text = "\(self.currentQuestionId)/\(self.factory.questionsBank.Questions.count)"
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -63,15 +77,30 @@ class ViewController: UIViewController {
         
         if sender.tag == 1{
             // el usuario ha clickado el boton true
-            isCorrect = (self.correntQuestion.answer == true)
+            isCorrect = (self.currentQuestion.answer == true)
         }else {
             // el usuario ha clickado el boton false
-            isCorrect = (self.correntQuestion.answer == false)
+            isCorrect = (self.currentQuestion.answer == false)
         }
+        
+        var title = "You have failed"
+        
         if (isCorrect) {
-            self.correctQuestionAnswered += 1
+            self.currectQuestionAnswered += 1
+            title = "Congratulation"
+            self.currentScore += 100*self.currectQuestionAnswered
         }
-        askNextQuestion()
+        
+        let alert = UIAlertController(title: title, message: "", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "ok", style: .default) { (_) in
+            
+            self.askNextQuestion()
+            self.updateUIElements()
+        }
+        
+        alert.addAction(okAction)
+        
+        present(alert, animated: true, completion: nil)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
