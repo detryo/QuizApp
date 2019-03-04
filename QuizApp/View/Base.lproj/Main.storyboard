@@ -112,11 +112,11 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1T-N8-Mbr" userLabel="ProgressView">
-                                <rect key="frame" x="0.0" y="852" width="30" height="30"/>
+                                <rect key="frame" x="0.0" y="864" width="30" height="18"/>
                                 <color key="backgroundColor" red="1" green="0.77347232189394044" blue="0.40298910095989104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="CJD-mr-IQD"/>
-                                    <constraint firstAttribute="height" constant="30" id="CMQ-fS-sba"/>
+                                    <constraint firstAttribute="width" constant="30" identifier="barWidth" id="CJD-mr-IQD"/>
+                                    <constraint firstAttribute="height" constant="18" id="CMQ-fS-sba"/>
                                 </constraints>
                             </view>
                         </subviews>

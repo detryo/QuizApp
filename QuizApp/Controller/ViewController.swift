@@ -33,9 +33,7 @@ class ViewController: UIViewController {
         currentScore = 0
         currentQuestionId = 0
         currectQuestionAnswered = 0
-        
         self.factory.questionsBank.Questions.shuffle()
-        
         askNextQuestion()
         updateUIElements()
     }
@@ -47,7 +45,6 @@ class ViewController: UIViewController {
             self.labelQuestion.text = self.currentQuestion.question
             self.currentQuestionId += 1
         }else{
-            // Aqui la new Question es nula ya que hemos hecho todas las preguntas
             gameOver()
         }
     }
@@ -69,6 +66,14 @@ class ViewController: UIViewController {
         
         self.labelScore.text = "Score: \(self.currentScore)"
         self.labelQuestionNumber.text = "\(self.currentQuestionId)/\(self.factory.questionsBank.Questions.count)"
+        
+        for constraint in self.progressBar.constraints {
+            
+            if constraint.identifier == "barWidth" {
+                
+                constraint.constant = (self.view.frame.size.width)/CGFloat(self.factory.questionsBank.Questions.count) * CGFloat(self.currentQuestionId)
+            }
+        }
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -76,31 +81,20 @@ class ViewController: UIViewController {
         var isCorrect : Bool
         
         if sender.tag == 1{
-            // el usuario ha clickado el boton true
             isCorrect = (self.currentQuestion.answer == true)
         }else {
-            // el usuario ha clickado el boton false
             isCorrect = (self.currentQuestion.answer == false)
         }
         
-        var title = "You have failed"
-        
         if (isCorrect) {
             self.currectQuestionAnswered += 1
-            title = "Congratulation"
             self.currentScore += 100*self.currectQuestionAnswered
+            ProgressHUD.showSuccess("Congratulation", interaction: true)
+        }else {
+            ProgressHUD.showError("Thats was wrong", interaction: true)
         }
-        
-        let alert = UIAlertController(title: title, message: "", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "ok", style: .default) { (_) in
-            
-            self.askNextQuestion()
-            self.updateUIElements()
-        }
-        
-        alert.addAction(okAction)
-        
-        present(alert, animated: true, completion: nil)
+        askNextQuestion()
+        updateUIElements()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
