@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     
     func gameOver() {
         
-        let alert = UIAlertController(title: "Game Over", message: "You´re right \(self.currectQuestionAnswered) / \(self.currentQuestionId) Try again ", preferredStyle: .alert)
+        let alert = UIAlertController(title: NSLocalizedString("game.over.title", comment: "Title PopUp game over"), message: "\(NSLocalizedString("game.over.message1", comment: "")) \(self.currectQuestionAnswered) / \(self.currentQuestionId) \(NSLocalizedString("game.over.message2", comment: "")) ", preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "Ok", style: .default) { (_) in
             
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
     
     func updateUIElements() {
         
-        self.labelScore.text = "Score: \(self.currentScore)"
+        self.labelScore.text = "\(NSLocalizedString("score.text", comment: "")): \(self.currentScore)"
         self.labelQuestionNumber.text = "\(self.currentQuestionId)/\(self.factory.questionsBank.Questions.count)"
         
         for constraint in self.progressBar.constraints {
@@ -89,9 +89,9 @@ class ViewController: UIViewController {
         if (isCorrect) {
             self.currectQuestionAnswered += 1
             self.currentScore += 100*self.currectQuestionAnswered
-            ProgressHUD.showSuccess("Congratulation", interaction: true)
+            ProgressHUD.showSuccess(NSLocalizedString("question.ok", comment: ""), interaction: true)
         }else {
-            ProgressHUD.showError("Thats was wrong", interaction: true)
+            ProgressHUD.showError(NSLocalizedString("question.ko", comment: ""), interaction: true)
         }
         askNextQuestion()
         updateUIElements()
